@@ -1,0 +1,17 @@
+{
+  "name": "eventcalendarapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "jsr compile:js && node ./dist/js/app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "moment": "^2.18.1",
+    "threerest": "^1.0.5"
+  }
+}

@@ -1,0 +1,117 @@
+{
+    "confs": [
+        {
+            "id": 1,
+            "title": "L'innovation technologique n'existe pas.",
+            "speaker" : 1,
+            "room": 1,
+            "date": "2015-11-06 14:00",
+            "length": "50",
+            "abstract": "L'innovation doit être sociale avant d'être technologique. Comment regarder les nouvelles technologies sous un angle utile, social, humain et engagé ? Un aperçu du paysage technologique contemporain sous le regard d'un designer\n\n",
+            "track": 4,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 2,
+            "title": "REST from zero to hero in 45 minutes",
+            "speaker" : [
+                2,
+                3
+            ],
+            "room": 2,
+            "date": "2015-11-06 14:00",
+            "length": "50",
+            "abstract": "Venez découvrir - ou redécouvrir ! - les différents ingrédients qui sont a l’origine d’une bonne API.\n\nNous présenterons la transformation d’une API Web fictive (d'une conception assez discutable ;-) ) en une API REST vraiment user-friendly. Chaque étape sera l’occasion d’introduire un concept ou une bonne pratique supplémentaire en partant des bases de REST jusqu’aux sujets avancés tels que le versioning ou l’hypermédia.\n\nVous sortirez de cette session avec une vision claire des concepts cachés derrière le terme \"REST\".",
+            "track": 3,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+       {
+            "id": 3,
+            "title": "Advanced Scrolling Techniques on Android",
+            "speaker" : 4,
+            "room": 3,
+            "date": "2015-11-06 09:40",
+            "length": "50",
+            "abstract": "Scrolling is one of the most important gesture on mobile platforms. Indeed, it easily allows users to access a fairly large amount of content just by swiping their fingers on screen. In order to implement such gestures, the Android SDK comes with a bunch of scrolling containers: View, ListView, RecyclerView, ScrollView, etc. While using these components independently is relatively simple, it starts getting complicated when nesting them… In this session we will go through a complete overview of how Android deals with scrolling in general and how to master the scrolling mechanism to create compelling mobile user experience.",
+            "track": 1,
+            "lang": "fr",
+            "complexity": "303" 
+        }
+    ],
+    "tracks": [
+        {
+            "id": 1,
+            "name": "Mobile et objets connecté"
+        },
+        {
+            "id": 2,
+            "name": "Web"
+        },
+        {
+            "id": 3,
+            "name": "Cloud et Big Data"
+        },
+        {
+            "id": 4,
+            "name": "Découverte"
+        }
+    ],
+    "speakers": [
+        {
+            "id": 1,
+            "name": "Geoffrey Dorne",
+            "society": "Design & Human",
+            "biography": "Je m’appelle Geoffrey Dorne, je suis designer indépendant et fondateur de Design & Human, atelier de design éthique, social et radical."
+        },
+        {
+            "id": 2,
+            "name": "Antoine Richard",
+            "society": "Restlet",
+            "biography": "Antoine est \"Code Rider\" chez Restlet où il implémente des trucs sympas sur APISpark, la plateforme d’API as a Service. Il développe des applications web de manière agile depuis plus de 10 ans en Java, Javascript et Ruby. Depuis quelques années il prend plaisir à partager ses expériences dans divers rassemblements de développeurs."
+        },
+        {
+            "id": 3,
+            "name": "Manuel Boillot",
+            "society": "Restlet",
+            "biography": "Manuel est Code Artist chez Restlet. Il aime par dessus tout le beau code et tout ce qui à attrait aux déploiement continu. pratiques qu’il applique lors du développement de la plateforme d’hébergement d’API REST et d’API management “APISpark” de Restlet. Manuel est également JUG leader à Nantes (nantesjug.org) et aime échanger avec la communauté sur les différentes solutions techniques."
+        },
+        {
+            "id": 4,
+            "name": "Cyril Mottier",
+            "society": "Captain Train",
+            "biography": "Cyril Mottier is the Android Lead at Captain Train and Android Google Developer Expert. Passionate about technology and design, Cyril is an avid lover of Android and a multi-skilled engineer. He is actively involved in the Android community and shares his passion writing blog posts, creating open source libraries and giving talks. His motto: “Do less, but do it insanely great”"
+        }
+    ],
+    "rooms": [
+        {
+            "id":1,
+            "name": "Salle Titan"
+        },
+        {
+            "id":2,
+            "name": "Salle Bretagne"
+        },
+        {
+            "id":3,
+            "name": "Salle Belem"
+        },
+        {
+            "id":4,
+            "name": "Salle Graslin"
+        },
+        {
+            "id":5,
+            "name": "Espace Tour Lu"
+        },
+        {
+            "id":6,
+            "name": "Espace Bouffay"
+        },
+        {
+            "id":7,
+            "name": "Les machines"
+        }
+    ]
+}

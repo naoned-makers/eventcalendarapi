@@ -1,0 +1,5 @@
+{
+    "empty_list_confs": {"message":  "aucune conférence trouvée pour cet id"},
+    "empty_list_rooms": {"message":  "aucune salle trouvée pour cet id"},
+    "empty_list_speakers": {"message":  "aucun speaker trouvé pour cet id"}
+}
