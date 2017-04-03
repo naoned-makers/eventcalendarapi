@@ -3,6 +3,7 @@
 var threerest = require('threerest');
 
 import * as ServiceConfs from "./services/serviceConfs";
+import * as ServiceSearchConf from "./services/serviceSearchConf";
 import * as ServiceSpeakers from "./services/serviceSpeakers";
 import * as ServiceTracks from "./services/serviceTracks";
 import * as ServiceRooms from "./services/serviceRooms";
@@ -18,6 +19,7 @@ app.get("/", function(req, res){
 
 // load the service Test
 threerest.ServiceLoader.loadService(app, new ServiceConfs.default());
+threerest.ServiceLoader.loadService(app, new ServiceSearchConf.default());
 threerest.ServiceLoader.loadService(app, new ServiceSpeakers.default());
 threerest.ServiceLoader.loadService(app, new ServiceTracks.default());
 threerest.ServiceLoader.loadService(app, new ServiceRooms.default());

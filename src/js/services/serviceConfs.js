@@ -12,18 +12,18 @@ var db = require('../database/database');
 export default class ServiceConfs {
 
   @Methods.get("/")
-  @Hal.halServiceMethod(true)
+  @Hal.halServiceMethod()
   getAll() {
     return EventHelper.getConfs(db);
   }
 
   @Methods.get("/:id")
   @Hal.halServiceMethod()
-  getswitchId(value) {
+  getswitchId(value, req) {
     var id = value.id;
   	var result = EventHelper.searchParams(db, 'confs', 'id', id);
   	if (result) {
-      return EventHelper.getConf(result, db['speakers']);
+      return EventHelper.getConf(result, db['speakers'], db['rooms'], db['tracks']);
   	}
     throw new NotFoundError();
   }

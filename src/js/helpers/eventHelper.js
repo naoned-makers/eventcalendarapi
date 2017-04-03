@@ -16,9 +16,8 @@ export default class EventHelper {
   static getConfs(json) {
     var arr = [];
     var len = json["confs"].length;
-    console.log('csdfze' + json['speakers']);
     for (var i = 0; i < len; i++) {
-        arr.push(EventHelper.getConf(json["confs"][i], json['speakers']));
+        arr.push(EventHelper.getConf(json["confs"][i], json['speakers'], json['rooms'], json['tracks']));
     }
     return arr;
   }
@@ -27,10 +26,11 @@ export default class EventHelper {
    * A partir des données d'une conférence, on crée un objet Conf.
    * Chaque objet Serie est crée et ajouté à l'Author.
    */
-  static getConf(json, speakers) {
+  static getConf(json, speakers, rooms, tracks) {
     var speakersConf = [];
-    for (var i=0 ; i < speakers.length ; i++)
-    {
+    var roomConf = [];
+    var trackConf = [];
+    for (var i=0 ; i < speakers.length ; i++) {
       if( json['speaker'] instanceof Array ) {
         for (var j=0 ; j < json['speaker'].length ; j++) {
           if(speakers[i].id === json['speaker'][j]) {
@@ -43,7 +43,20 @@ export default class EventHelper {
         }
       }
     }
-    return new Conf(json["id"], json["title"], speakersConf, json["date"], json["room"], json["length"], json["abstract"], json["track"]);
+
+    for (var i=0 ; i < rooms.length ; i++) {
+        if(rooms[i].id === json['room']) {
+          roomConf.push(EventHelper.getRoom(rooms[i]));
+        }
+    }
+    
+    for (var i=0 ; i < tracks.length ; i++) {
+        if(tracks[i].id === json['track']) {
+          trackConf.push(EventHelper.getTrack(tracks[i]));
+        }
+    }
+
+    return new Conf(json["id"], json["title"], speakersConf, json["date"], roomConf, json["length"], json["abstract"], trackConf);
   }
 
   /*
@@ -125,4 +138,27 @@ export default class EventHelper {
       }
     }
   }
+  static searchConf(json, categoryField, searchField, searchVal) {
+    let result = [];
+    for (var i=0 ; i < json[categoryField].length ; i++)
+    {
+      if (json[categoryField][i][searchField] == searchVal) {
+        result.push(json[categoryField][i]);
+      }
+    }
+    return result;
+  }
+
+  
+  static searchSociety(json, society) {
+    let result = [];
+    for (var i=0 ; i < json.speakers.length ; i++)
+    {
+      if (json.speakers[i].society.toLowerCase() == society.toLowerCase()) {
+        result.push(json.speakers[i].id);
+      }
+    }
+    return result;
+  }
+
 }

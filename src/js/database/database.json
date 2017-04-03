@@ -2,22 +2,154 @@
     "confs": [
         {
             "id": 1,
-            "title": "L'innovation technologique n'existe pas.",
+            "title": "Advanced Scrolling Techniques on Android",
             "speaker" : 1,
-            "room": 1,
-            "date": "2015-11-06 14:00",
+            "room": 3,
+            "date": "2015-11-06 09:40",
             "length": "50",
-            "abstract": "L'innovation doit être sociale avant d'être technologique. Comment regarder les nouvelles technologies sous un angle utile, social, humain et engagé ? Un aperçu du paysage technologique contemporain sous le regard d'un designer\n\n",
+            "abstract": "Scrolling is one of the most important gesture on mobile platforms. Indeed, it easily allows users to access a fairly large amount of content just by swiping their fingers on screen. In order to implement such gestures, the Android SDK comes with a bunch of scrolling containers: View, ListView, RecyclerView, ScrollView, etc. While using these components independently is relatively simple, it starts getting complicated when nesting them… In this session we will go through a complete overview of how Android deals with scrolling in general and how to master the scrolling mechanism to create compelling mobile user experience.",
+            "track": 1,
+            "lang": "fr",
+            "complexity": "303" 
+        },
+        {
+            "id": 2,
+            "title": "Angular 2 : templates, composants et injection de dépendances",
+            "speaker" : 2,
+            "room": 1,
+            "date": "2015-11-06 09:40",
+            "length": "50",
+            "abstract": "La genèse d'Angular 2 n'est pas achevée, mais la version alpha permet déjà de se faire une bonne idée de ce à quoi il va ressembler. Et c'est bluffant ! Si la version 1 a paru magique, dans sa version 2 c'est un Angular épuré, à la fois plus puissant et plus limpide.\n\nDans cette session, rien que du code, pour vous montrer comment se créent les composants, s'écrivent les templates et s'injectent les dépendances.",
+            "track": 2,
+            "lang": "fr",
+            "complexity": "202" 
+        },
+        {
+            "id": 3,
+            "title": "Déploiement continu, test en production, autoscaling et workflow métiers pour vos applications web dans le Cloud",
+            "speaker" : 3,
+            "room": 2,
+            "date": "2015-11-06 09:40",
+            "length": "50",
+            "abstract": "Déployer des applications webs dans le Cloud permet aux développeurs de tirer partie de fonctionnalités Dev Ops comme le déploiement continu, le test en production, l'autoscaling, etc sans avoir à se soucier de l'infrastructure sous jacente.\nDans cette session, nous verrons comment le service Azure App Service de Microsoft vous permet d'obtenir cette flexibilité.",
+            "track": 3,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 4,
+            "title": "Introduction à la technologie RealSense",
+            "speaker" : 4,
+            "room": 4,
+            "date": "2015-11-06 09:40",
+            "length": "50",
+            "abstract": "Les technologies Intel® RealSense sont basées sur des caméras 3D temps-réel. Ces caméras déjà intégrées à certain PCs et convertibles Windows et bientôt sur tablettes et phablettes Android.\n\nDécouvrez ce que l’on peut faire avec RealSense, et comment développer de nouvelles expériences immersives, naturelles ou simplement fun à l’aide du SDK.",
             "track": 4,
             "lang": "fr",
             "complexity": "101" 
         },
         {
-            "id": 2,
+            "id": 5,
+            "title": "Hypermedia in the Shadow of the Death Star",
+            "speaker" : 5,
+            "room": 4,
+            "date": "2015-11-06 10:40",
+            "length": "50",
+            "abstract": "\"That's no moon. It's a space station...\" Il est trop tard pour faire demi-tour. Vous sentez la poigne de fer de l'Empire Galactique se refermer sur vous. La lutte est veine mais il y a d'autres façons de remporter la victoire. Votre maîtrise des pouvoirs de l'HTTP sera indispensable à votre survie. Saurez-vous affronter l'impitoyable Vador ?\nQue l'Hypermedia soit avec vous.\nJe vous invite à m'accompagner pour une aventure ludique mêlant API web, science-fiction, hypermedia et culture du développeur. Au travers d'un jeu d'aventure textuel un peu fou, je vous ferai découvrir quelques techniques pour améliorer vos propres API web.",
+            "track": 1,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 6,
+            "title": "3.14 things I didn’t know about CSS",
+            "speaker" : 6,
+            "room": 2,
+            "date": "2015-11-06 10:40",
+            "length": "50",
+            "abstract": "This talk will showcase a series of obscure CSS fun facts, such as CSS syntax gimmicks and quirks, weird tricks that involve CSS in one way or another, and security vulnerabilities that are enabled by (ab)using CSS in unexpected ways.",
+            "track": 2,
+            "lang": "en",
+            "complexity": "101" 
+        },
+        {
+            "id": 7,
+            "title": "Redefining PaaS: Managed container based microservices on Google App Engine",
+            "speaker" : 7,
+            "room": 3,
+            "date": "2015-11-06 10:40",
+            "length": "50",
+            "abstract": "Microservices are a great model for developing modern applications. But microservice based architectures are more complicated than traditional monolithic apps and can come with a significant management overhead particularly when you need to maintain different environments for dev, test and production. This overhead either falls on your development team or to people you hire specifically to manage it. \n\nThis talk with multiple demos, looks at how to build, test and deploy container based microservice architectures without having to worry about managing the platform on which they run, thus freeing up your developers to do what they do best, writing application code.\nWe'll look at new and enhanced features of Google App Engine and walk through the staged deployment of both a simple application and a more complicated microservices based architecture. We'll also look at how App Engine has evolved from it's original sandboxed runtime environment to what it is today, a next generation platform for building and deploying modern day applications.",
+            "track": 3,
+            "lang": "fr",
+            "complexity": "202" 
+        },
+        {
+            "id": 8,
+            "title": "Mark, Marque et Marques",
+            "speaker" : 8,
+            "room": 1,
+            "date": "2015-11-06 109:40",
+            "length": "50",
+            "abstract": "Mark, Marque et Marques… ou comment créer une marque et la faire vivre sur une interface. \nQue ce soit une startup, un nouveau produit ou un projet client, la marque se doit d’être au centre de nos pensées. \nTout est lié par la Marque : interface, animations, architecture… \nDesigners et développeurs sont l’équipe parfaite pour créer et faire vivre La Marque. \nEt pourtant, ce n’est pas ce qui se passe aujourd’hui...\nCette conférence est donc pour expliquer ce processus et faire que les développeurs et designers travaillent main dans la main pour créer une expérience inoubliable pour l’utilisateur, inspirante et technologiquement innovante.",
+            "track": 4,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 9,
+            "title": "Harald à la dent bleue dans ton navigateur web",
+            "speaker" : 9,
+            "room": 2,
+            "date": "2015-11-06 11:40",
+            "length": "50",
+            "abstract": "Interagir avec des appareils en Bluetooth depuis une application Web est sur le point de devenir possible grâce à une nouvelle API Web standardisée qui se veut moderne et simple d'utilisation.",
+            "track": 1,
+            "lang": "fr",
+            "complexity": "202" 
+        },
+        {
+            "id": 10,
+            "title": "React, une autre façon de penser vos composants web",
+            "speaker" : 10,
+            "room": 1,
+            "date": "2015-11-06 11:40",
+            "length": "50",
+            "abstract": "React est une librairie JavaScript développée par Facebook pour créer facilement des interfaces graphiques. Contrairement à d'autres librairies, ici pas de templates et de pseudo code, React permet d'utiliser la pleine expressivité de JavaScript et de bénéficier de tous les goodies du langage.\n\nLe but de React est de proposer une solution permettant de construire des applications conséquentes avec des données qui évoluent dans le temps en écrivant exclusivement des composants réutilisables et testables tout en gardant une approche simple et efficace.\n\nDurant ce live coding, nous verrons comment utiliser React dans diverses situations, comment écrire des composants en utilisant ES2015, comment exposer ses composants React en WebComponents et pourquoi écrire des petites applications mobiles natives.",
+            "track": 2,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 11,
+            "title": "L'impact du Machine Learning dans les entreprises et les bests practices pour maximiser les chances de réussites d'un projet data",
+            "speaker" : 11,
+            "room": 4,
+            "date": "2015-11-06 11:40",
+            "length": "50",
+            "abstract": "Une version peut etre vu ici : https://www.youtube.com/watch?v=oMwKPV9amDE",
+            "track": 3,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 12,
+            "title": "Usages des robots humanoïdes dans les espaces grand publics, et connectés à notre monde numérique",
+            "speaker" : 12,
+            "room": 3,
+            "date": "2015-11-06 11:40",
+            "length": "50",
+            "abstract": "Les nouveaux robots humanoïdes ont maintenant des capacités qui permettent d'interagir naturellement et intuitivement avec leur environnement.\nAinsi, ils peuvent être utilisés en tant que nouvelles interfaces de communication avec un humain, ou avec notre monde numérique.\n\nDifférents cas d'usages sur l’intérêt de ces robots seront évoqués lors de cette conférence, tels que : Le conseil en magasin, l'orientation dans les espaces grand publics, l'accueil dans les hôtels, l'animation dans les musées, ou bien le divertissement. Les domaines d'applications sont sans limites.\nL'intégration de ces interfaces homme/machine soulève de nouveaux défis techniques, qui seront également abordés au travers de différents cas d'usages.",
+            "track": 4,
+            "lang": "fr",
+            "complexity": "101" 
+        },
+        {
+            "id": 16,
             "title": "REST from zero to hero in 45 minutes",
             "speaker" : [
-                2,
-                3
+                18,
+                19
             ],
             "room": 2,
             "date": "2015-11-06 14:00",
@@ -27,17 +159,112 @@
             "lang": "fr",
             "complexity": "101" 
         },
-       {
-            "id": 3,
-            "title": "Advanced Scrolling Techniques on Android",
-            "speaker" : 4,
-            "room": 3,
-            "date": "2015-11-06 09:40",
+        {
+            "id": 17,
+            "title": "L'innovation technologique n'existe pas.",
+            "speaker" : 20,
+            "room": 0,
+            "date": "2015-11-06 14:00",
             "length": "50",
-            "abstract": "Scrolling is one of the most important gesture on mobile platforms. Indeed, it easily allows users to access a fairly large amount of content just by swiping their fingers on screen. In order to implement such gestures, the Android SDK comes with a bunch of scrolling containers: View, ListView, RecyclerView, ScrollView, etc. While using these components independently is relatively simple, it starts getting complicated when nesting them… In this session we will go through a complete overview of how Android deals with scrolling in general and how to master the scrolling mechanism to create compelling mobile user experience.",
-            "track": 1,
+            "abstract": "L'innovation doit être sociale avant d'être technologique. Comment regarder les nouvelles technologies sous un angle utile, social, humain et engagé ? Un aperçu du paysage technologique contemporain sous le regard d'un designer\n\n",
+            "track": 4,
             "lang": "fr",
-            "complexity": "303" 
+            "complexity": "101" 
+        }
+    ],
+
+    "speakers": [
+        {
+            "id": 1,
+            "name": "Cyril Mottier",
+            "society": "Captain Train",
+            "biography": "Cyril Mottier is the Android Lead at Captain Train and Android Google Developer Expert. Passionate about technology and design, Cyril is an avid lover of Android and a multi-skilled engineer. He is actively involved in the Android community and shares his passion writing blog posts, creating open source libraries and giving talks. His motto: “Do less, but do it insanely great”"
+        },
+        {
+            "id": 2,
+            "name": "Thierry Chatel",
+            "society": "",
+            "biography": "Je suis consultant et formateur, passionné par l'achitecture des applications web, et spécialiste de JavaScript et du framework AngularJS. Et Google Developer Expert sur AngularJS depuis 2014."
+        },
+        {
+            "id": 3,
+            "name": "Benjamin Talmard",
+            "society": "Microsoft France",
+            "biography": "En tant que conseiller technologique sur Microsoft Azure dans l'entité « Developers Experience & Evangelism » de Microsoft France, Benjamin est en charge de l'évangélisation de la stack Web et Cloud de Microsoft. Les architectures Web sur Microsoft Azure et le Framework ASP.NET 5 sont donc les sujets sur lequel il passe son temps en ce moment."
+        },
+        {
+            "id": 4,
+            "name": "Xavier Hallade",
+            "society": "Intel Corporation",
+            "biography": "Developer Evangelist à Intel et Google Developer Expert pour Android. Il est en charge d'aider les développeurs d'Applications et librairies Android à améliorer le support des architectures x86(_64) et autres technologies développées par Intel."
+        },
+
+        {
+            "id": 5,
+            "name": "Hugo Wood",
+            "society": "Zenika",
+            "biography": "Développeur autodidacte depuis 12 ans, professionnel depuis 3, je n'ai de cesse d'apprendre de nouvelles techniques pour améliorer mon savoir-faire. J'aime étudier les langages, de C# à Haskell. Au quotidien, ce sont Java et JavaScript qui m'accaparent. Je suis consultant et formateur chez Zenika. Enfin, j'apprécie les jeux de code : vous me retrouverez par exemple sur CodinGame, et là, c'est Python."
+        },
+        {
+            "id": 6,
+            "name": "Mathias Bynens",
+            "society": "Opera Software",
+            "biography": "Mathias is a Belgian web standards enthusiast. He likes HTML, CSS, JavaScript, Unicode, performance, and security. At Opera Software he’s a member of the Developer Relations team."
+        },
+        {
+            "id": 7,
+            "name": "Ludovic Champenois",
+            "society": "Google",
+            "biography": "Ludo is a Tech Lead and Manager in the Google Cloud platform, leading the runtimes (Java, Python, GO, PHP, Node.js) and the Developer SDK."
+        },
+        {
+            "id": 8,
+            "name": "Manon Gruaz",
+            "society": "ARCBEES",
+            "biography": "Branding goddess and Design adventuress who believe in changing the world by EMotional and kick ass designs. Meaning is my Quest, Be inside a user’s brain is my job. Born as French, Raised as a Citizen of the world and Sarcastic by design."
+        },
+
+        {
+            "id": 9,
+            "name": "François Beaufort",
+            "society": "Google",
+            "biography": "François Beaufort travaille chez Google pour l'équipe Chrome Apps"
+        },
+        {
+            "id": 10,
+            "name": "Mathieu Ancelin",
+            "society": "SERLI",
+            "biography": "Mathieu ANCELIN est développeur à SERLI, spécialisé dans la programmation web et les frameworks web modernes avec un bon background autour des technologies Java EE. Mathieu est impliqué dans plusieurs projets open-source comme GlassFish et Weld, et en lead également quelques un comme ReactiveCouchbase et Weld-OSGi; Il est membre de l'expert group de la JSR-346, de la JSR 371 et fait partie de l'équipe du Poitou-Charentes JUG."
+        },
+        {
+            "id": 11,
+            "name": "François-Xavier Rousselot",
+            "society": "",
+            "biography": "François-Xavier Rousselot est Data Innovation and Machine Learning consultant. He leverages his 4 years of experience in managing Machine Learning and Datascience projects to help executives find the right data opportunities for their international companies. Having both a strong business and technical experience, he has always been able to detect new opportunities, design and successfully implement solutions with the latest technologies."
+        },
+        {
+            "id": 12,
+            "name": "Franck Calzada",
+            "society": "INTUITIVE ROBOTS",
+            "biography": "Fondateur et dirigeant d'Intuitive Robots, une jeune startup Nantaise, dont la mission est de concevoir et réaliser des applications pour robots humanoïdes, tels que les fameux robots NAO et PEPPER, le tout dernier robot d'Aldebaran Robotics. Notre but: Donner une étincelle de vie aux robots afin de les accueillir dans nos vies."
+        },
+        {
+            "id": 18,
+            "name": "Antoine Richard",
+            "society": "Restlet",
+            "biography": "Antoine est \"Code Rider\" chez Restlet où il implémente des trucs sympas sur APISpark, la plateforme d’API as a Service. Il développe des applications web de manière agile depuis plus de 10 ans en Java, Javascript et Ruby. Depuis quelques années il prend plaisir à partager ses expériences dans divers rassemblements de développeurs."
+        },
+        {
+            "id": 19,
+            "name": "Manuel Boillot",
+            "society": "Restlet",
+            "biography": "Manuel est Code Artist chez Restlet. Il aime par dessus tout le beau code et tout ce qui à attrait aux déploiement continu. pratiques qu’il applique lors du développement de la plateforme d’hébergement d’API REST et d’API management “APISpark” de Restlet. Manuel est également JUG leader à Nantes (nantesjug.org) et aime échanger avec la communauté sur les différentes solutions techniques."
+        },
+        {
+            "id": 20,
+            "name": "Geoffrey Dorne",
+            "society": "Design & Human",
+            "biography": "Je m’appelle Geoffrey Dorne, je suis designer indépendant et fondateur de Design & Human, atelier de design éthique, social et radical."
         }
     ],
     "tracks": [
@@ -56,32 +283,6 @@
         {
             "id": 4,
             "name": "Découverte"
-        }
-    ],
-    "speakers": [
-        {
-            "id": 1,
-            "name": "Geoffrey Dorne",
-            "society": "Design & Human",
-            "biography": "Je m’appelle Geoffrey Dorne, je suis designer indépendant et fondateur de Design & Human, atelier de design éthique, social et radical."
-        },
-        {
-            "id": 2,
-            "name": "Antoine Richard",
-            "society": "Restlet",
-            "biography": "Antoine est \"Code Rider\" chez Restlet où il implémente des trucs sympas sur APISpark, la plateforme d’API as a Service. Il développe des applications web de manière agile depuis plus de 10 ans en Java, Javascript et Ruby. Depuis quelques années il prend plaisir à partager ses expériences dans divers rassemblements de développeurs."
-        },
-        {
-            "id": 3,
-            "name": "Manuel Boillot",
-            "society": "Restlet",
-            "biography": "Manuel est Code Artist chez Restlet. Il aime par dessus tout le beau code et tout ce qui à attrait aux déploiement continu. pratiques qu’il applique lors du développement de la plateforme d’hébergement d’API REST et d’API management “APISpark” de Restlet. Manuel est également JUG leader à Nantes (nantesjug.org) et aime échanger avec la communauté sur les différentes solutions techniques."
-        },
-        {
-            "id": 4,
-            "name": "Cyril Mottier",
-            "society": "Captain Train",
-            "biography": "Cyril Mottier is the Android Lead at Captain Train and Android Google Developer Expert. Passionate about technology and design, Cyril is an avid lover of Android and a multi-skilled engineer. He is actively involved in the Android community and shares his passion writing blog posts, creating open source libraries and giving talks. His motto: “Do less, but do it insanely great”"
         }
     ],
     "rooms": [
