@@ -2,7 +2,7 @@ import { Service } from "threerest";
 import { Methods } from "threerest";
 import { Hal } from "threerest";
 
-import Confs from "../models/conf";
+import Confs from "../models/session";
 import EventHelper from "../helpers/eventHelper";
 import ErrorHelper from "../helpers/errorHelper";
 

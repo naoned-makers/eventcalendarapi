@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "jsr compile:js ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "jsr compile:js && node ./dist/js/app"
+    "start": "nodemon ./dist/js/app",
+    "dev": "nodemon --exec npm start"
   },
   "author": "",
   "license": "ISC",

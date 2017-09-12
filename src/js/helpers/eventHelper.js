@@ -1,6 +1,7 @@
 var assert = require("assert");
 
-import Conf from "../models/conf";
+import Session from "../models/session";
+import Schedule from "../models/schedule";
 import Speaker from "../models/speaker";
 import Track from "../models/track";
 import Room from "../models/room";
@@ -9,15 +10,32 @@ var db = require('../database/database');
 
 export default class EventHelper {
 
+   /*
+   * Traitement de l'ensemble des données pour transformer les entrées
+   * auteur de la base de donnée en suite d'objet Author
+   */
+  static getSchedules(json) {
+    var arr = [];
+    var len = json.length;
+    for (var i = 0; i < len; i++) {
+        arr.push(EventHelper.getSchedule(json[i]));
+    }
+    return arr;
+  }
+  static getSchedule(json) {
+    let schedule = new Schedule(json['date'], json['tracks']);
+    return schedule;
+  }
   /*
    * Traitement de l'ensemble des données pour transformer les entrées
    * auteur de la base de donnée en suite d'objet Author
    */
-  static getConfs(json) {
+  static getSessions(json) {
     var arr = [];
-    var len = json["confs"].length;
+    var len = json.length;
     for (var i = 0; i < len; i++) {
-        arr.push(EventHelper.getConf(json["confs"][i], json['speakers'], json['rooms'], json['tracks']));
+      console.log(i);
+        arr.push(EventHelper.getSession(json[i]));
     }
     return arr;
   }
@@ -26,37 +44,22 @@ export default class EventHelper {
    * A partir des données d'une conférence, on crée un objet Conf.
    * Chaque objet Serie est crée et ajouté à l'Author.
    */
-  static getConf(json, speakers, rooms, tracks) {
-    var speakersConf = [];
-    var roomConf = [];
-    var trackConf = [];
-    for (var i=0 ; i < speakers.length ; i++) {
-      if( json['speaker'] instanceof Array ) {
-        for (var j=0 ; j < json['speaker'].length ; j++) {
-          if(speakers[i].id === json['speaker'][j]) {
-            speakersConf.push(EventHelper.getShortSpeaker(speakers[i]));
-          }
-        }
-      } else {
-        if(speakers[i].id === json['speaker']) {
-          speakersConf.push(EventHelper.getShortSpeaker(speakers[i]));
-        }
-      }
-    }
-
-    for (var i=0 ; i < rooms.length ; i++) {
-        if(rooms[i].id === json['room']) {
-          roomConf.push(EventHelper.getRoom(rooms[i]));
-        }
-    }
-    
-    for (var i=0 ; i < tracks.length ; i++) {
-        if(tracks[i].id === json['track']) {
-          trackConf.push(EventHelper.getTrack(tracks[i]));
-        }
-    }
-
-    return new Conf(json["id"], json["title"], speakersConf, json["date"], roomConf, json["length"], json["abstract"], trackConf);
+  static getSession(json) {
+    console.log(json['id'])
+    console.log(json['title'])
+    let session = new Session(json['id'], json['title']);
+    console.log(session)
+    session.titleMobile = json['titleMobile'];
+    session.image = json['image'];
+    session.description = json['description'];
+    session.type = json['type'];
+    session.track = json['track'];
+    session.category = json['category'];
+    session.language = json['language'];
+    session.tags = json['tags'];
+    session.complexity = json['complexity'];
+    session.speakers = json['speakers'];
+    return session;
   }
 
   /*
@@ -65,9 +68,9 @@ export default class EventHelper {
    */
   static getSpeakers(json) {
     var arr = [];
-    var len = json["speakers"].length;
-    for (var i = 0; i < len; i++) {
-        arr.push(EventHelper.getSpeaker(json["speakers"][i]));
+    var speakers = json; 
+    for (var i = 0; i < speakers.length; i++) {
+        arr.push(EventHelper.getSpeaker(speakers[i]));
     }
     return arr;
   }
@@ -77,8 +80,16 @@ export default class EventHelper {
    */
   static getSpeaker(json) {
     let speaker = new Speaker(json["id"], json["name"]);
-    speaker.society = json["society"];
-    speaker.biography = json["biography"];
+    speaker.society = json["company"];
+    speaker.company = json["company"];
+    speaker.companyLogo = json["companyLogo"];
+    speaker.country = json["country"];
+    speaker.photoUrl = json["photoUrl"];
+    speaker.shortBio = json["shortBio"];
+    speaker.bio = json["bio"];
+    speaker.tags = json["tags"];
+    speaker.badges = json["badges"];
+    speaker.socials = json["socials"];
     return speaker;
   }
 
@@ -130,11 +141,11 @@ export default class EventHelper {
   /*
    * Renvoie l'objet json correspondant à la catégorie, au critère voulue
    */
-  static searchParams(json, categoryField, searchField, searchVal) {
-    for (var i=0 ; i < json[categoryField].length ; i++)
+  static searchParams(json, searchField, searchVal) {
+    for (var i=0 ; i < json.length ; i++)
     {
-      if (json[categoryField][i][searchField] == searchVal) {
-        return json[categoryField][i]
+      if (json[i][searchField] == searchVal) {
+        return json[i]
       }
     }
   }

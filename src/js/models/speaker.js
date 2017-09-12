@@ -9,8 +9,6 @@ export default class Speaker {
   constructor(id, name) {
     this.id = id;
     this.name = name;
-    //this.society = society;
-    //this.biography = biography;
   }
 }
 

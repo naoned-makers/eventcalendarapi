@@ -2,28 +2,28 @@ import { Service } from "threerest";
 import { Methods } from "threerest";
 import { Hal } from "threerest";
 
-import Confs from "../models/conf";
+import Sessions from "../models/session";
 import EventHelper from "../helpers/eventHelper";
 
-var db = require('../database/database');
+var db = Object.values(require('../database/sessions'));
 
 
-@Service.path("/confs")
-export default class ServiceConfs {
+@Service.path("/sessions")
+export default class ServiceSessions {
 
   @Methods.get("/")
   @Hal.halServiceMethod()
   getAll() {
-    return EventHelper.getConfs(db);
+    return EventHelper.getSessions(db);
   }
 
   @Methods.get("/:id")
   @Hal.halServiceMethod()
   getswitchId(value, req) {
     var id = value.id;
-  	var result = EventHelper.searchParams(db, 'confs', 'id', id);
+  	var result = EventHelper.searchParams(db, 'id', id);
   	if (result) {
-      return EventHelper.getConf(result, db['speakers'], db['rooms'], db['tracks']);
+      return EventHelper.getSession(result, db['speakers'], db['rooms'], db['tracks']);
   	}
     throw new NotFoundError();
   }

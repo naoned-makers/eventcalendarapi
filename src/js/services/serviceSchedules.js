@@ -2,28 +2,28 @@ import { Service } from "threerest";
 import { Methods } from "threerest";
 import { Hal } from "threerest";
 
-import Speaker  from "../models/speaker";
+import Schedule  from "../models/schedule";
 import EventHelper from "../helpers/eventHelper";
 
-var db = Object.values(require('../database/speakers'));
+var db = Object.values(require('../database/schedule'));
 
 
-@Service.path("/speakers")
-export default class ServiceSpeakers {
+@Service.path("/schedule")
+export default class ServiceSchedules {
 
   @Methods.get("/")
   @Hal.halServiceMethod(true)
   getAll() {
-    return EventHelper.getSpeakers(db);
+    return EventHelper.getSchedules(db);
   }
 
   @Methods.get("/:id")
   @Hal.halServiceMethod(false)
   getswitchId(value) {
-    var id = value.id;
-   	var result = EventHelper.searchParams(db, 'id', id);
+    var date = value.date;
+   	var result = EventHelper.searchParams(db, 'date', date);
    	if (result) {
-       return EventHelper.getSpeaker(result, id);
+       return EventHelper.getSchedule(result, date);
    	}
      throw new NotFoundError();
   }
