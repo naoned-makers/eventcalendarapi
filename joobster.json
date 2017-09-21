@@ -5,7 +5,7 @@
       "plugins" : ["transform-decorators-legacy"]
     },
     "webpack": {
-        "entry":"main.js"
+        "entry":"src/app.js"
     }
   }
 }

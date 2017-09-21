@@ -1,5 +1,5 @@
 {
-  "name": "eventcalendarapi",
+  "name": "im-eventapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "custom-error-generator": "^7.0.0",
     "express": "^4.15.2",
     "moment": "^2.18.1",
-    "threerest": "^1.0.5"
+    "threerest": "^1.0.5",
+    "tslint": "^5.7.0"
   }
 }
