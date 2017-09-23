@@ -5,7 +5,7 @@ import { Hal } from "threerest";
 import Sessions from "../models/session";
 import EventHelper from "../helpers/eventHelper";
 
-var db = Object.values(require('../database/sessions'));
+var db = Object.values(require('../../../database/sessions'));
 
 
 @Service.path("/sessions")
@@ -13,8 +13,14 @@ export default class ServiceSessions {
 
   @Methods.get("/")
   @Hal.halServiceMethod()
-  getAll() {
-    return EventHelper.getSessions(db);
+  getAll(value, request) {
+    if (request.query.speaker) {
+      console.log(request.query.speaker)
+      return EventHelper.getSessions(db, request.query.speaker);  
+    } else {
+      return EventHelper.getSessions(db);
+    }
+    //return EventHelper.getSessions(db);
   }
 
   @Methods.get("/:id")

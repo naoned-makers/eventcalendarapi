@@ -6,7 +6,7 @@ import Confs from "../models/session";
 import EventHelper from "../helpers/eventHelper";
 import ErrorHelper from "../helpers/errorHelper";
 
-var db = require('../database/database');
+var db = require('../../../database/database');
 
 
 

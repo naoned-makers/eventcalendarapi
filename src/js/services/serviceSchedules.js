@@ -5,7 +5,7 @@ import { Hal } from "threerest";
 import Schedule  from "../models/schedule";
 import EventHelper from "../helpers/eventHelper";
 
-var db = Object.values(require('../database/schedule'));
+var db = Object.values(require('../../../database/schedule'));
 
 
 @Service.path("/schedule")

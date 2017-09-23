@@ -1,7 +1,7 @@
 var assert = require("assert");
 
 var createCustomError = require('custom-error-generator');
-var db = require('../database/database');
+var db = require('../../../database/database');
 
 export default class ErrorHelper {
 

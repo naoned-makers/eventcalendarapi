@@ -6,7 +6,7 @@ import Speaker from "../models/speaker";
 import Track from "../models/track";
 import Room from "../models/room";
 
-var db = require('../database/database');
+var db = require('../../../database/database');
 
 export default class EventHelper {
 
@@ -30,12 +30,34 @@ export default class EventHelper {
    * Traitement de l'ensemble des données pour transformer les entrées
    * auteur de la base de donnée en suite d'objet Author
    */
-  static getSessions(json) {
+  static getSessions(json, speaker) {
+
+    let toto = 12;
+    let tutu = ['12'];
+    if (tutu.indexOf(toto+'') > -1) {
+      console.log('je suis dans le tableau');
+    } else {
+      console.log('je ne suis pas dans le tableau');
+    }
+
+
+
+
     var arr = [];
     var len = json.length;
     for (var i = 0; i < len; i++) {
-      console.log(i);
+      console.log('json[i]speaker : ' + json[i]['speakers'])
+      if (speaker) {
+        //console.log('speaker : ' + speaker)
+        //console.log('json[i] : ' + json[i])
+        
+        if (json[i]['speakers'] && json[i]['speakers'].indexOf(speaker+"") > -1) {
+          console.log('je suis in')
+          arr.push(EventHelper.getSession(json[i]));
+        }
+      } else {
         arr.push(EventHelper.getSession(json[i]));
+      }
     }
     return arr;
   }
@@ -66,11 +88,17 @@ export default class EventHelper {
    * Traitement de l'ensemble des données pour transformer les entrées
    * speakers de la base de donnée en suite d'objet Speaker
    */
-  static getSpeakers(json) {
+  static getSpeakers(json, society) {
     var arr = [];
     var speakers = json; 
     for (var i = 0; i < speakers.length; i++) {
+      if (society) {
+        if (speakers[i]["company"] == society) {
+          arr.push(EventHelper.getSpeaker(speakers[i]));
+        }
+      } else {
         arr.push(EventHelper.getSpeaker(speakers[i]));
+      }
     }
     return arr;
   }

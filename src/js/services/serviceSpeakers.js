@@ -5,7 +5,7 @@ import { Hal } from "threerest";
 import Speaker  from "../models/speaker";
 import EventHelper from "../helpers/eventHelper";
 
-var db = Object.values(require('../database/speakers'));
+var db = Object.values(require('../../../database/speakers'));
 
 
 @Service.path("/speakers")
@@ -13,13 +13,17 @@ export default class ServiceSpeakers {
 
   @Methods.get("/")
   @Hal.halServiceMethod(true)
-  getAll() {
-    return EventHelper.getSpeakers(db);
+  getAll(value, request) {
+    if (request.query.society) {
+      return EventHelper.getSpeakers(db, request.query.society);  
+    } else {
+      return EventHelper.getSpeakers(db);
+    }
   }
 
   @Methods.get("/:id")
   @Hal.halServiceMethod(false)
-  getswitchId(value) {
+  getswitchId(value, request) {
     var id = value.id;
    	var result = EventHelper.searchParams(db, 'id', id);
    	if (result) {
