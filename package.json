@@ -21,5 +21,9 @@
     "request": "^2.82.0",
     "threerest": "^1.0.5",
     "tslint": "^5.7.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0"
   }
 }

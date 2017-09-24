@@ -13,8 +13,12 @@ export default class ServiceSchedules {
 
   @Methods.get("/")
   @Hal.halServiceMethod(true)
-  getAll() {
-    return EventHelper.getSchedules(db);
+  getAll(value, request) {
+    if (request.query.session) {
+      return EventHelper.getSchedules(db, request.query.session);  
+    } else {
+      return EventHelper.getSchedules(db);
+    }
   }
 
   @Methods.get("/:id")

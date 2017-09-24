@@ -6,8 +6,9 @@ export default class Schedule {
   @Hal.resourceId()
   id = 1;
 
-  constructor(date, tracks) {
+  constructor(date, tracks, timeslot) {
     this.date = date;
     this.tracks = tracks;
+    this.timeslot = timeslot
   }
 }

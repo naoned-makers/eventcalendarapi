@@ -6,24 +6,38 @@ import Speaker from "../models/speaker";
 import Track from "../models/track";
 import Room from "../models/room";
 
-var db = require('../../../database/database');
-
 export default class EventHelper {
 
    /*
    * Traitement de l'ensemble des données pour transformer les entrées
    * auteur de la base de donnée en suite d'objet Author
    */
-  static getSchedules(json) {
+  static getSchedules(json, session) {
     var arr = [];
     var len = json.length;
     for (var i = 0; i < len; i++) {
+      if (session) {
+        for (var index = 0; index < json[i]['timeslots'].length; index++) {
+          var element = json[i]['timeslots'][index];
+
+          var toto = element['sessions'].map(function (img) { return img; }).indexOf(parseInt(session));
+          var tutu = element['sessions'].findIndex(img => img === parseInt(session));
+          var found = element['sessions'].find(product => product.find(item => item === parseInt(session)));
+
+          if (found) {
+            arr.push(EventHelper.getSchedule(json[i], index));
+          }          
+        }
+
+      } else {
         arr.push(EventHelper.getSchedule(json[i]));
+      }    
     }
     return arr;
   }
-  static getSchedule(json) {
-    let schedule = new Schedule(json['date'], json['tracks']);
+  static getSchedule(json, index) {
+    console.log(index)
+    let schedule = new Schedule(json['date'], json['tracks'], json['timeslots'][index]);
     return schedule;
   }
   /*
@@ -31,28 +45,11 @@ export default class EventHelper {
    * auteur de la base de donnée en suite d'objet Author
    */
   static getSessions(json, speaker) {
-
-    let toto = 12;
-    let tutu = ['12'];
-    if (tutu.indexOf(toto+'') > -1) {
-      console.log('je suis dans le tableau');
-    } else {
-      console.log('je ne suis pas dans le tableau');
-    }
-
-
-
-
     var arr = [];
     var len = json.length;
     for (var i = 0; i < len; i++) {
-      console.log('json[i]speaker : ' + json[i]['speakers'])
       if (speaker) {
-        //console.log('speaker : ' + speaker)
-        //console.log('json[i] : ' + json[i])
-        
-        if (json[i]['speakers'] && json[i]['speakers'].indexOf(speaker+"") > -1) {
-          console.log('je suis in')
+        if (json[i]['speakers'] && json[i]['speakers'].indexOf(parseInt(speaker)) > -1) {
           arr.push(EventHelper.getSession(json[i]));
         }
       } else {
@@ -67,10 +64,7 @@ export default class EventHelper {
    * Chaque objet Serie est crée et ajouté à l'Author.
    */
   static getSession(json) {
-    console.log(json['id'])
-    console.log(json['title'])
     let session = new Session(json['id'], json['title']);
-    console.log(session)
     session.titleMobile = json['titleMobile'];
     session.image = json['image'];
     session.description = json['description'];

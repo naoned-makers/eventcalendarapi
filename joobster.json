@@ -2,6 +2,8 @@
   "javascript": {
     "compile" : {
       "presets": ["es2015", "stage-1"],
+      "sourceMaps": true,
+      "retainLines": true,
       "plugins" : ["transform-decorators-legacy"]
     },
     "webpack": {

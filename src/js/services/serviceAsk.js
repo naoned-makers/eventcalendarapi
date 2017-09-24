@@ -5,7 +5,6 @@ import { Hal } from "threerest";
 import Room  from "../models/room";
 import EventHelper from "../helpers/eventHelper";
 
-var db = require('../../../database/database');
 var request = require('request')
 
 @Service.path("/ask")

@@ -1,5 +1,6 @@
 "use strict";
 
+require('babel-register');
 var threerest = require('threerest');
 var request = require('request');
 var fs = require('fs');
@@ -7,14 +8,19 @@ var cors = require('cors');
 
 import * as ServiceSessions from "./services/serviceSessions";
 import * as ServiceSchedules from "./services/serviceSchedules";
-import * as ServiceSearchConf from "./services/serviceSearchConf";
 import * as ServiceSpeakers from "./services/serviceSpeakers";
-import * as ServiceTracks from "./services/serviceTracks";
-import * as ServiceRooms from "./services/serviceRooms";
 import * as ServiceTest from "./services/serviceTest";
 import * as ServiceAsk from "./services/serviceAsk";
 
 import express from "express";
+
+
+import ArrayHelper from "./helpers/arrayHelper";
+
+let speakers = [1497, 5005]
+ArrayHelper.getSpeakers(speakers);
+
+
 
 var app = express();
 
@@ -32,10 +38,7 @@ request('https://devfest.gdgnantes.com/data/speakers.json').pipe(fs.createWriteS
 // load the service Test
 threerest.ServiceLoader.loadService(app, new ServiceSessions.default());
 threerest.ServiceLoader.loadService(app, new ServiceSchedules.default());
-threerest.ServiceLoader.loadService(app, new ServiceSearchConf.default());
 threerest.ServiceLoader.loadService(app, new ServiceSpeakers.default());
-threerest.ServiceLoader.loadService(app, new ServiceTracks.default());
-threerest.ServiceLoader.loadService(app, new ServiceRooms.default());
 threerest.ServiceLoader.loadService(app, new ServiceTest.default());
 threerest.ServiceLoader.loadService(app, new ServiceAsk.default());
 
