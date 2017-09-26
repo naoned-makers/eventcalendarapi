@@ -9,18 +9,10 @@ var cors = require('cors');
 import * as ServiceSessions from "./services/serviceSessions";
 import * as ServiceSchedules from "./services/serviceSchedules";
 import * as ServiceSpeakers from "./services/serviceSpeakers";
-import * as ServiceTest from "./services/serviceTest";
+import * as ServiceTalks from "./services/serviceTalks";
 import * as ServiceAsk from "./services/serviceAsk";
 
 import express from "express";
-
-
-import ArrayHelper from "./helpers/arrayHelper";
-
-let speakers = [1497, 5005]
-ArrayHelper.getSpeakers(speakers);
-
-
 
 var app = express();
 
@@ -39,7 +31,7 @@ request('https://devfest.gdgnantes.com/data/speakers.json').pipe(fs.createWriteS
 threerest.ServiceLoader.loadService(app, new ServiceSessions.default());
 threerest.ServiceLoader.loadService(app, new ServiceSchedules.default());
 threerest.ServiceLoader.loadService(app, new ServiceSpeakers.default());
-threerest.ServiceLoader.loadService(app, new ServiceTest.default());
+threerest.ServiceLoader.loadService(app, new ServiceTalks.default());
 threerest.ServiceLoader.loadService(app, new ServiceAsk.default());
 
 app.listen(8080, () => {
