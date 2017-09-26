@@ -5,7 +5,7 @@ import { Hal } from "threerest";
 import Sessions from "../models/session";
 import EventHelper from "../helpers/eventHelper";
 
-var db = Object.values(require('../../../database/sessions'));
+let db = Object.values(require('../../../database/sessions'));
 
 
 @Service.path("/sessions")

@@ -5,6 +5,7 @@ import Schedule from "../models/schedule";
 import Speaker from "../models/speaker";
 
 var dbSpeakers = Object.values(require('../../../database/speakers'));
+var dbSchedule = Object.values(require('../../../database/schedule'));
 
 export default class ArrayHelper {
 
@@ -13,21 +14,32 @@ export default class ArrayHelper {
    * auteur de la base de donnée en suite d'objet Author
    */
   static getSpeakers(speakers) {
-    let plouf = dbSpeakers.map(function (img) {
-      return img;
-    }).indexOf(5005);
-    console.log(plouf);
-    
-    for (var index = 0; index < dbSpeakers.length; index++) {
-      var speaker = dbSpeakers[index];
-      /*var toto = element['sessions'].map(function (img) {
-        return img;
-      }).indexOf(parseInt(session));
-*/
-      if (speakers.indexOf(speaker.id)) {
+    let result = [];
+    for (var index = 0; index < speakers.length; index++) {
+      let idSpeaker = dbSpeakers.map(function (img) {
+        return img.id;
+      }).indexOf(speakers[index]);
+      if (idSpeaker > -1) {
+        result.push(dbSpeakers[idSpeaker]);
+      }
+    }    
+    return result;
+  }
 
-      } 
-    }
-    return "";
+  static getSlot(idSession) {
+    let result;
+    dbSchedule.find(function (element) {
+      let timeslot = element['timeslots'].find(function (slot) {
+        return slot['sessions'].find(function (session) {
+          if (parseInt(session) === parseInt(idSession)) {
+            return true;
+          }
+        })
+      });
+      if (timeslot) {
+        result = { 'date': element.date, 'startTime': timeslot['startTime'], 'endTime': timeslot['endTime']};
+      }
+    })
+    return result;
   }
 }

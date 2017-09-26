@@ -18,28 +18,16 @@ export default class ServiceTalks {
   @Methods.get("/")
   @Hal.halServiceMethod(true)
   getAll(value, request) {
-    console.log(request.query.society)
     if (result.length === 0) {
       this.createData();
     }
-    let yyyy = [];
+    
     if (request.query.society) {
-      for (var i = 0; i < result.length; i++) {
-        var session = result[i];
-
-        for (var index = 0; index < session.speakers.length; index++) {
-          var speaker = session.speakers[index];
-          if (speaker.company == request.query.society) {
-            console.log('on a trouvé un speaker ' + speaker.company);
-            
-            yyyy.push(session);
-            console.log(yyyy);
-            
-          }
-        }
-      }
-      return yyyy;
-    } 
+        return this.searchWithCriteria('company', request.query.society);
+    } else if (request.query.tag) {
+        return this.searchWithCriteria('tag', request.query.tag);
+    }
+    
     return result;
   }
 
@@ -67,5 +55,26 @@ export default class ServiceTalks {
       }
       session['slot'] = ArrayHelper.getSlot(session.id);
     }
+  }
+
+  searchWithCriteria(criteria, valueCriteria) {
+    let resultWithCriteria =[];
+    result.map(function(session) {
+      let found = false;
+      if (criteria === 'company') {
+        found = session.speakers.some(function(speaker) {
+          return speaker.company === valueCriteria;
+        });
+      } else if (criteria === 'tag') {
+        found = session.tags.some(function(tag) {
+          return tag === valueCriteria;
+        });
+      }
+      
+      if(found) {
+        resultWithCriteria.push(session);
+      }
+    });
+    return resultWithCriteria;
   }
 }
