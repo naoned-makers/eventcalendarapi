@@ -1,6 +1,7 @@
 "use strict";
 
 var threerest = require('threerest');
+let path = require('path');
 
 import * as ServiceConfs from "./services/serviceConfs";
 import * as ServiceSearchConf from "./services/serviceSearchConf";
@@ -13,8 +14,19 @@ import express from "express";
 
 var app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.use(express.static(path.join(__dirname + './')));
 app.get("/", function(req, res){
   res.send("Les ressources disponibles sont /confs /speakers et /rooms");
+});
+app.get("/jarvis", function(req, res){
+  //res.sendFile(path.join(__dirname, '../public', 'index1.html'));
+ //res.sendFile(path.join(__dirname, '/speaktojarvis.html'));
+  res.sendFile('/naoned-makers/ironman/im-eventapi/speaktojarvis.html', { root: __dirname });
 });
 
 // load the service Test

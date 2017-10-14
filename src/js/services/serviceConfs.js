@@ -12,13 +12,11 @@ var db = require('../database/database');
 export default class ServiceConfs {
 
   @Methods.get("/")
-  @Hal.halServiceMethod()
   getAll() {
     return EventHelper.getConfs(db);
   }
 
   @Methods.get("/:id")
-  @Hal.halServiceMethod()
   getswitchId(value, req) {
     var id = value.id;
   	var result = EventHelper.searchParams(db, 'confs', 'id', id);

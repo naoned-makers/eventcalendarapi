@@ -1,0 +1,9 @@
+{
+    "presets": [
+      ["es2015", {
+        "modules": "commonjs"
+      }]
+    ],
+    "plugins": ["transform-decorators-legacy"]
+  }
+  
