@@ -160,7 +160,7 @@
     "description": "Le monde a toujours été « Marqué ». \nDu nombre de pois sur les ailes du papillon Monarque au bande du tigre du bengal, ce système de «marques distinctives» a permis d’organiser la complexité de notre monde. Mais vers 2014, les choses se troublent. \nL’idée de Marque évolue avec l’arrivée de dispositifs comme Amazon Echo avec reconnaissance vocale soutenus par un AI incroyablement intelligent.\nLa Marque connaît un changement de paradigme.\nElle n’est plus juste un symbole, un signe. Elle n’est même pas une voix. Elle est devenue une entité intelligente, une personnalité, un algorithme capable d’apprendre.\nComment «Marqué» une intelligence artificielle ?\nQuel type de relation allons-nous avoir maintenant avec la Marque ?\nDeviendrons-nous des consommateurs complètements manipulés par la Marque ? \nLa Marque va-t elle tout simplement devenir notre meilleur ami?",
     "type": "quicky",
     "track": {
-      "title": "Titan"
+      "title": "Belem"
     },
     "category": "discovery",
     "language": "fr",
@@ -251,8 +251,8 @@
   },
   "1709": {
     "id": 1709,
-    "title": "Prettier - ou comment s'assurer un code bien formatté",
-    "description": "Prettier est l'un des tout derniers projets open-source proposé  par Facebook. Il vous permettra de formatter votre code JavaScript, TypeScript, CSS et bientôt peut-être HTML, et ainsi d'assurer un style commun sur l'ensemble de votre codebase. Durant ce quickie, nous aborderons les fonctionnalités proposées et également les différentes intégrations possibles.",
+    "title": "Prettier - ou comment s'assurer un code bien formaté",
+    "description": "Prettier est l'un des tout derniers projets open-source proposé par Facebook. Il vous permettra de formater votre code JavaScript, TypeScript, CSS et bientôt peut-être HTML, et ainsi d'assurer un style commun sur l'ensemble de votre codebase. Durant ce quickie, nous aborderons les fonctionnalités proposées et également les différentes intégrations possibles.",
     "type": "quicky",
     "track": {
       "title": "Titan"
@@ -271,7 +271,7 @@
   "1733": {
     "id": 1733,
     "title": "Développez votre première application Vue.js",
-    "description": "La popularité de Vue.js a connu une croissance impressionnante ces derniers mois. La librairie est définitivement ancrée dans les tendances 2017 du développement JavaScript. Vue.js séduit de nombreux développeurs à travers sa facilité d’utilisation et sa rapidité de prise en main.\n\nNous vous proposons de découvrir cette librairie à travers un code lab interactif !",
+    "description": "La popularité de Vue.js a connu une croissance impressionnante ces derniers mois. La librairie est définitivement ancrée dans les tendances 2017 du développement JavaScript. Vue.js séduit de nombreux développeurs à travers sa facilité d’utilisation et sa rapidité de prise en main.\n\nNous vous proposons de découvrir cette librairie à travers un code lab interactif !\n\nPrérequis:\nAvoir une version récente de Node.js et Npm.\nVisual Studio Code et le plugin Vetur sont un plus !",
     "type": "codelab",
     "track": {
       "title": "Les machines"
@@ -342,7 +342,8 @@
     ],
     "complexity": "Beginner",
     "speakers": [
-      546
+      546,
+      547
     ]
   },
   "1815": {
@@ -408,7 +409,7 @@
     "description": "Vous venez de terminer de coder une nouvelle fonctionnalité pour votre projet. Elle est parfaite, tout est clair, vous l'avez testée dans tous les sens. Normal, le code, ça vous connaît.\n\nEt là, un type se ramène et commence à vous faire de petites remarques. Il vous parle de cohérence, de refactoring, de patterns à appliquer. Il vous fait même remarquer que ligne 42, vous avez oublié un espace avant le point virgule. Et puis il se barre, en vous donnant une petite tape sur l'épaule, et en vous souhaitant bon courage. Vous pleurez.\n\nSi c'est l'image que vous avez de la code review, alors arrêtez tout, et venez. Les code reviews nous aident à garder la cohérence technique d'un produit, sa maintenabilité, sa stabilité, et surtout nous permettent d'apprendre des autres, continuellement. Evidemment, il y a des règles à respecter pour que ça fonctionne. Mais le résultat est là.\n\nUne perte de temps ? Un truc inutile ? On en reparle.",
     "type": "quicky",
     "track": {
-      "title": "Belem"
+      "title": "Titan"
     },
     "category": "discovery",
     "language": "fr",
@@ -869,7 +870,8 @@
     ],
     "complexity": "Beginner",
     "speakers": [
-      2386
+      2386,
+      5006
     ]
   },
   "1962": {
@@ -895,7 +897,7 @@
   "1970": {
     "id": 1970,
     "title": "Développez vos propres supers-pouvoirs dans une réalité mixte... et avec des Hololens",
-    "description": "**Envie de jouer d'égal à égal avec Superman ou d'autres super-héros ?**\n\nVenez découvrir l'essentiel des **prérequis et techniques de développement** de projets en réalité mixte (Holographique) sous Hololens.\n\nNous utiliserons ``Unity 3D``, ``Visual Studio 2017``, du ``C#`` et quelques services du cloud si besoin d'intelligence artificielle.\n\nVous pourrez ainsi défier les **Marvel** dans votre réalité \"parallèle\", juste le temps d'un lab.",
+    "description": "**Envie de jouer d'égal à égal avec Superman ou d'autres super-héros ?**\n\nVenez découvrir l'essentiel des **prérequis et techniques de développement** de projets en réalité mixte (Holographique) sous Hololens.\n\nNous utiliserons ``Unity 3D``, ``Visual Studio 2017``, du ``C#`` et quelques services du cloud si besoin d'intelligence artificielle.\n\nVous pourrez ainsi défier les **Marvel** dans votre réalité \"parallèle\", juste le temps d'un lab.\n\n**Prérequis**\n\n- Matériel :\n - PC avec Windows 10 avec Hyper-V (Pro, Entreprise ou Education), 64bits, 4 coeurs, 8Go RAM, GPU compatible DirectX 11\n\n- Logiciels :\n - Unity 3D version Unity 2017.1.0f3 + Universal Windows Platform development\n - Visual Studio 2015 Update 3 ou 2017\n - Hololens emulator\n\nLa procédure d'installation et de paramétrage complète du poste de développement est disponible ici (ne tenir compte que de la partie concernant Hololens) : https://developer.microsoft.com/en-us/windows/mixed-reality/install_the_tools",
     "type": "codelab",
     "track": {
       "title": "Les machines"

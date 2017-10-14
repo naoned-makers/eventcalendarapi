@@ -1,10 +1,11 @@
 "use strict";
 
 require('babel-register');
-var threerest = require('threerest');
-var request = require('request');
-var fs = require('fs');
-var cors = require('cors');
+let threerest = require('threerest');
+let path = require('path');
+let cors = require('cors');
+let request = require('request');
+let fs = require('fs');
 
 import * as ServiceSessions from "./services/serviceSessions";
 import * as ServiceSchedules from "./services/serviceSchedules";
@@ -18,8 +19,19 @@ var app = express();
 
 app.use(cors());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.use(express.static(path.join(__dirname + './')));
 app.get("/", function(req, res){
   res.send("Les ressources disponibles sont /sessions /speakers et /rooms");
+});
+app.get("/jarvis", function(req, res){
+  //res.sendFile(path.join(__dirname, '../public', 'index1.html'));
+ //res.sendFile(path.join(__dirname, '/speaktojarvis.html'));
+  res.sendFile('/naoned-makers/ironman/im-eventapi/speaktojarvis.html', { root: __dirname });
 });
 
 // Update Devfest data
