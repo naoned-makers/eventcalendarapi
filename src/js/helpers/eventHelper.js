@@ -82,12 +82,12 @@ export default class EventHelper {
    * Traitement de l'ensemble des données pour transformer les entrées
    * speakers de la base de donnée en suite d'objet Speaker
    */
-  static getSpeakers(json, society) {
+  static getSpeakers(json, company) {
     var arr = [];
     var speakers = json; 
     for (var i = 0; i < speakers.length; i++) {
-      if (society) {
-        if (speakers[i]["company"] == society) {
+      if (company) {
+        if (speakers[i]["company"] == company) {
           arr.push(EventHelper.getSpeaker(speakers[i]));
         }
       } else {
@@ -102,7 +102,6 @@ export default class EventHelper {
    */
   static getSpeaker(json) {
     let speaker = new Speaker(json["id"], json["name"]);
-    speaker.society = json["company"];
     speaker.company = json["company"];
     speaker.companyLogo = json["companyLogo"];
     speaker.country = json["country"];
@@ -183,11 +182,11 @@ export default class EventHelper {
   }
 
   
-  static searchSociety(json, society) {
+  static searchCompany(json, company) {
     let result = [];
     for (var i=0 ; i < json.speakers.length ; i++)
     {
-      if (json.speakers[i].society.toLowerCase() == society.toLowerCase()) {
+      if (json.speakers[i].company.toLowerCase() == company.toLowerCase()) {
         result.push(json.speakers[i].id);
       }
     }

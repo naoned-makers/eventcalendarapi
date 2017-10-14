@@ -21,11 +21,11 @@ export default class ServiceTalks {
     if (result.length === 0) {
       this.createData();
     }
-    
-    if (request.query.society) {
-        return this.searchWithCriteria('company', request.query.society);
+
+    if (request.query.company) {
+        return this.searchWithCriteria('company', request.query.company.toLowerCase());
     } else if (request.query.tag) {
-        return this.searchWithCriteria('tag', request.query.tag);
+        return this.searchWithCriteria('tag', request.query.tag.toLowerCase());
     }
     
     return result;
@@ -60,14 +60,18 @@ export default class ServiceTalks {
   searchWithCriteria(criteria, valueCriteria) {
     let resultWithCriteria =[];
     result.map(function(session) {
+      console.log("session id" + session.id)
       let found = false;
       if (criteria === 'company') {
         found = session.speakers.some(function(speaker) {
-          return speaker.company === valueCriteria;
+          if (!speaker.company) {
+            return;
+          }
+          return speaker.company.toLowerCase() === valueCriteria.toLowerCase();
         });
       } else if (criteria === 'tag') {
         found = session.tags.some(function(tag) {
-          return tag === valueCriteria;
+          return tag.toLowerCase() === valueCriteria.toLowerCase();
         });
       }
       

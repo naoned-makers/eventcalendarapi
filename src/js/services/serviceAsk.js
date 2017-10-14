@@ -13,7 +13,7 @@ export default class ServiceAsk {
   @Methods.get("/")
   @Hal.halServiceMethod(true)
   getAll() {
-    return request('http://localhost:8080/speakers?society=Zenika');
+    return request('http://localhost:8080/speakers?company=Zenika');
   }
 
 

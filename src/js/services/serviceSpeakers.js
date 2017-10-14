@@ -14,8 +14,8 @@ export default class ServiceSpeakers {
   @Methods.get("/")
   @Hal.halServiceMethod(true)
   getAll(value, request) {
-    if (request.query.society) {
-      return EventHelper.getSpeakers(db, request.query.society);  
+    if (request.query.company) {
+      return EventHelper.getSpeakers(db, request.query.company);  
     } else {
       return EventHelper.getSpeakers(db);
     }
