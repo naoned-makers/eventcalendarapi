@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "webpack --display-error-details",
-    "start": "webpack --display-error-details && node ./dist/app"
+    "build": "webpack --display-error-details",
+    "start": "npm run build && node ./dist/app"
   },
   "author": "",
   "license": "ISC",

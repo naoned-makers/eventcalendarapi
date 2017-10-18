@@ -7,9 +7,7 @@ export default class Session {
   //id = 1;
 
   constructor(id, title) {
-    console.log(id)
     this.id = id;
-    console.log(title)
     this.title = title;
     /*this.speaker = speaker;
     this.date = date;

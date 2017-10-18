@@ -60,7 +60,6 @@ export default class ServiceTalks {
   searchWithCriteria(criteria, valueCriteria) {
     let resultWithCriteria =[];
     result.map(function(session) {
-      console.log("session id" + session.id)
       let found = false;
       if (criteria === 'company') {
         found = session.speakers.some(function(speaker) {

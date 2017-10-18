@@ -36,7 +36,6 @@ export default class EventHelper {
     return arr;
   }
   static getSchedule(json, index) {
-    console.log(index)
     let schedule = new Schedule(json['date'], json['tracks'], json['timeslots'][index]);
     return schedule;
   }

@@ -11,7 +11,6 @@ import * as ServiceSessions from "./services/serviceSessions";
 import * as ServiceSchedules from "./services/serviceSchedules";
 import * as ServiceSpeakers from "./services/serviceSpeakers";
 import * as ServiceTalks from "./services/serviceTalks";
-import * as ServiceAsk from "./services/serviceAsk";
 
 import express from "express";
 
@@ -29,8 +28,6 @@ app.get("/", function(req, res){
   res.send("Les ressources disponibles sont /sessions /speakers et /rooms");
 });
 app.get("/jarvis", function(req, res){
-  //res.sendFile(path.join(__dirname, '../public', 'index1.html'));
- //res.sendFile(path.join(__dirname, '/speaktojarvis.html'));
   res.sendFile('/naoned-makers/ironman/im-eventapi/speaktojarvis.html', { root: __dirname });
 });
 
@@ -44,9 +41,8 @@ threerest.ServiceLoader.loadService(app, new ServiceSessions.default());
 threerest.ServiceLoader.loadService(app, new ServiceSchedules.default());
 threerest.ServiceLoader.loadService(app, new ServiceSpeakers.default());
 threerest.ServiceLoader.loadService(app, new ServiceTalks.default());
-threerest.ServiceLoader.loadService(app, new ServiceAsk.default());
 
-app.listen(8080, () => {
+app.listen(8082, () => {
   console.log("Express start...");
   console.log("Les APIs sont consultables aux adresses :"); 
   console.log("http://localhost:8080/sessions");

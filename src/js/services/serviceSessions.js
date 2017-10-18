@@ -15,7 +15,6 @@ export default class ServiceSessions {
   @Hal.halServiceMethod()
   getAll(value, request) {
     if (request.query.speaker) {
-      console.log(request.query.speaker)
       return EventHelper.getSessions(db, request.query.speaker);  
     } else {
       return EventHelper.getSessions(db);
