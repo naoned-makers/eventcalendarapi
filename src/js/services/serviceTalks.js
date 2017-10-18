@@ -87,6 +87,8 @@ export default class ServiceTalks {
   }
 
   searchWithCriteria(criteria, valueCriteria) {
+    const now = moment();
+    //const now = moment('2017-10-19 8:30');
     let resultWithCriteria =[];
     result.map(function(session) {
       let found = false;
@@ -107,6 +109,14 @@ export default class ServiceTalks {
         resultWithCriteria.push(session);
       }
     });
-    return resultWithCriteria;
+
+    return resultWithCriteria
+    .filter(talk => {
+      // Keep talks scheduled today and not already played
+      const slotDate = moment(talk.slot.date + ' ' + talk.slot.startTime);
+      return slotDate.date() === now.date() && slotDate.month() === now.month() && slotDate.year() === now.year() && slotDate.isAfter(now);
+    });
+
+    //return resultWithCriteria;
   }
 }
