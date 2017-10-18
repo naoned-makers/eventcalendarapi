@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --display-error-details",
-    "start": "npm run build && node ./dist/app"
+    "start": "webpack --display-error-details && node ./dist/app"
   },
   "author": "",
   "license": "ISC",
@@ -22,10 +22,14 @@
     "express": "^4.15.2",
     "fs": "0.0.1-security",
     "joobster": "0.0.7",
-    "moment": "^2.18.1",
+    "moment": "^2.19.1",
     "path": "^0.12.7",
     "request": "^2.83.0",
     "threerest": "^1.0.5",
     "webpack": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2017": "^6.24.1"
   }
 }

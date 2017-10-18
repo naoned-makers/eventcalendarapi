@@ -1,9 +1,15 @@
 {
-    "presets": [
-      ["es2015", {
+  "presets": [
+    [
+      "es2015",
+      {
         "modules": "commonjs"
-      }]
+      }
     ],
-    "plugins": ["transform-decorators-legacy"]
-  }
-  
+    "es2017"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-runtime"
+  ]
+}
