@@ -4,6 +4,7 @@ import { Hal } from "threerest";
 import { Pagination } from "threerest";
 
 import ArrayHelper from "../helpers/arrayHelper";
+import moment from 'moment';
 
 var dbSessions = Object.values(require('../../../database/sessions'));
 var dbSpeakers = Object.values(require('../../../database/speakers'));
@@ -23,27 +24,55 @@ export default class ServiceTalks {
     }
 
     if (request.query.company) {
-        return this.searchWithCriteria('company', request.query.company.toLowerCase());
+      return this.searchWithCriteria('company', request.query.company.toLowerCase());
     } else if (request.query.tag) {
-        return this.searchWithCriteria('tag', request.query.tag.toLowerCase());
+      return this.searchWithCriteria('tag', request.query.tag.toLowerCase());
     }
-    
+
     return result;
+  }
+
+  @Methods.get('/next')
+  @Hal.halServiceMethod(true)
+  getAllNext(value, request) {
+    if (result.length === 0) {
+      this.createData();
+    }
+    const now = moment();
+
+    return result
+      .filter(talk => {
+        // Keep talks scheduled today and not already played
+        const slotDate = moment(talk.slot.date + ' ' + talk.slot.startTime);
+        return slotDate.date() === now.date() && slotDate.month() === now.month() && slotDate.year() === now.year() && slotDate.isAfter(now);
+      })
+      .reduce((res, current) => {
+        // Search next talk for every room
+        const talkInSameRoom = res.find(talk => current.track.title === talk.track.title);
+        if (!talkInSameRoom) {
+          return res.concat(current);
+        } else {
+          if (moment(current.slot.date + ' ' + current.slot.startTime).isBefore(moment(talkInSameRoom.slot.date + ' ' + talkInSameRoom.slot.startTime))) {
+            return res.filter(talk => talk.id !== talkInSameRoom.id).concat(current);
+          }
+        }
+        return res;
+      }, []);
   }
 
   @Methods.get("/:id")
   @Hal.halServiceMethod()
   getswitchId(value) {
-    let idSession = value.id; 
+    let idSession = value.id;
     if (result.length === 0) {
       this.createData();
-    } 
+    }
     if (value.id) {
       return result.find(function (element) {
         return element.id == parseInt(value.id);
       });
-    } 
-    return result; 
+    }
+    return result;
   }
 
   createData() {
@@ -62,19 +91,19 @@ export default class ServiceTalks {
     result.map(function(session) {
       let found = false;
       if (criteria === 'company') {
-        found = session.speakers.some(function(speaker) {
+        found = session.speakers.some(function (speaker) {
           if (!speaker.company) {
             return;
           }
           return speaker.company.toLowerCase() === valueCriteria.toLowerCase();
         });
       } else if (criteria === 'tag') {
-        found = session.tags.some(function(tag) {
+        found = session.tags.some(function (tag) {
           return tag.toLowerCase() === valueCriteria.toLowerCase();
         });
       }
-      
-      if(found) {
+
+      if (found) {
         resultWithCriteria.push(session);
       }
     });
