@@ -45,7 +45,7 @@ threerest.ServiceLoader.loadService(app, new ServiceTalks.default());
 app.listen(8082, () => {
   console.log("Express start...");
   console.log("Les APIs sont consultables aux adresses :"); 
-  console.log("http://localhost:8080/sessions");
-  console.log("http://localhost:8080/speakers");
-  console.log("http://localhost:8080/schedule");
+  console.log("http://localhost:8082/sessions");
+  console.log("http://localhost:8082/speakers");
+  console.log("http://localhost:8082/schedule");
 });
